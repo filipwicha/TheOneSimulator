@@ -8,7 +8,29 @@
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "core.DTNSim"
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch DTNSim",
+            "request": "launch",
+            "mainClass": "core.DTNSim",
+            "projectName": "the-one",
+            "args": "wdm_settings\\Manhattan.txt"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "fi.tkk.netlab.dtn.ecla.Main",
+            "projectName": "the-one"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(1)",
+            "request": "launch",
+            "mainClass": "org.netlab.dtn.ecla.Main",
+            "projectName": "the-one"
         }
     ]
 }
