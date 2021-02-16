@@ -21,4 +21,12 @@ public class RREPL {
 		this.lifetime = this.DEFAULT_LIFETIME;
 	}
 
+	public RREPL(RREPL rrepl) {
+		this.sourceID = rrepl.sourceID;
+		this.destinationID = rrepl.destinationID;
+		this.sequenceNumber = rrepl.sequenceNumber;
+		this.hopCount = rrepl.hopCount;
+		this.lifetime = rrepl.lifetime;
+	}
+
 }

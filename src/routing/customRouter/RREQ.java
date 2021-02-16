@@ -23,4 +23,16 @@ public class RREQ {
 		this.hopCount = 0;
 	}
 
+
+
+	public RREQ(RREQ rreq) {
+		this.sourceID = rreq.sourceID;
+		this.destinationID = rreq.destinationID;
+		this.sequenceNumber = rreq.sequenceNumber;
+		this.broadcastID = rreq.broadcastID;
+		this.hopCount = rreq.hopCount;
+	}
+
+
+
 }

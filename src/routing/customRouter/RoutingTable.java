@@ -12,10 +12,15 @@ public class RoutingTable {
 
 	public RoutingTable() {
 		this.routingTable = new ArrayList<>();
+		
+		//addRoute(host, host, 0);
 	}
 
 	public void addRoute(DTNHost destinationID, DTNHost nextHop, int hops) {
-		routingTable.add(new RoutingTableEntry(destinationID, nextHop, hops));
+		if (getRoute(destinationID) == null) {
+			routingTable.add(new RoutingTableEntry(destinationID, nextHop, hops));
+		}
+		
 	}
 
 	public RoutingTableEntry getRoute(DTNHost destinationID) {
