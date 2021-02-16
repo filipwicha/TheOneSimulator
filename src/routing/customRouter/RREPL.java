@@ -5,7 +5,7 @@ import core.SimClock;
 
 public class RREPL {
 	
-	private int DEFAULT_LIFETIME = 128;
+	private int DEFAULT_LIFETIME = 10000;
 
 	public DTNHost sourceID;
 	public DTNHost destinationID;

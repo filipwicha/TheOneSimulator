@@ -10,6 +10,10 @@ Group.msgTtl = 1433
 
 Scenario.nrofHostGroups = 3
 
+firstinterface.type = SimpleBroadcastInterface
+firstinterface.transmitSpeed = 100k
+firstinterface.transmitRange = 100
+
 ###################################
 ### common settings for all groups
 Group.movementModel = WorkingDayMovement
@@ -21,6 +25,9 @@ Group.transmitSpeed = 100k
 Group.waitTime = 0, 0
 # walking speeds
 Group.speed = 0.5, 1.5
+
+Group.nrofInterfaces = 1
+Group.interface1 = firstinterface
 
 Group.nrOfOffices = 200
 Group.workDayLength = 28800
@@ -39,6 +46,9 @@ Group.minGroupSize = 1
 Group.maxGroupSize = 3
 Group.minAfterShoppingStopTime = 3600
 Group.maxAfterShoppingStopTime = 7200
+
+
+
 
 ####################################################
 
