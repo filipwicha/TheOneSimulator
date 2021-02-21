@@ -66,10 +66,10 @@ public class CustomRouter extends ActiveRouter {
 		}
 
 		// Try first the messages that can be delivered to final recipient
-//		if (exchangeDeliverableMessages() != null) {
-//			System.out.println("I have delivered the message to final recipient");
-//			return; // started a transfer, don't try others (yet)
-//		}
+		if (exchangeDeliverableMessages() != null) {
+			System.out.println("I have delivered the message to final recipient");
+			return; // started a transfer, don't try others (yet)
+		}
 		///////////////////////////////////////////////////////////
 
 		routingTable.removeExpiredRoutes();
