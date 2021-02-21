@@ -12,11 +12,11 @@
         },
         {
             "type": "java",
-            "name": "Launch DTNSim",
+            "name": "Launch DTNSim on unix",
             "request": "launch",
             "mainClass": "core.DTNSim",
             "projectName": "the-one",
-            "args": "wdm_settings\\Manhattan.txt"
+            "args": "wdm_settings/Manhattan.txt"
         },
         {
             "type": "java",

@@ -1,44 +1,37 @@
 package routing.customRouter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import core.DTNHost;
 import core.SimClock;
 
 public class RoutingTable {
 
-	private ArrayList<RoutingTableEntry> routingTable;
+	private HashMap<DTNHost, RoutingTableEntry> routingTable;
 	public int DEFAULT_TIMEOUT = 1000000;
 
 	public RoutingTable() {
-		this.routingTable = new ArrayList<>();
-		
-		//addRoute(host, host, 0);
+		this.routingTable = new HashMap<>();
 	}
 
 	public void addRoute(DTNHost destinationID, DTNHost nextHop, int hops) {
-		if (getRoute(destinationID) == null) {
-			routingTable.add(new RoutingTableEntry(destinationID, nextHop, hops));
-		}
-		
+		routingTable.put(destinationID, new RoutingTableEntry(destinationID, nextHop, hops));
 	}
 
 	public RoutingTableEntry getRoute(DTNHost destinationID) {
-		
-		
-		for (RoutingTableEntry entry : routingTable) {
-			if (entry.destinationID == destinationID) {
-				return entry;
-			}
-		}
-		return null;
+		return routingTable.get(destinationID);
 	}
 
 	public void removeExpiredRoutes() {
-		for (RoutingTableEntry entry : routingTable) {
-			if (SimClock.getIntTime() - entry.sequenceNumber >= DEFAULT_TIMEOUT) {
-				routingTable.remove(entry);
+		ArrayList<DTNHost> keys = new ArrayList<>();
+
+		routingTable.entrySet().stream().forEach(e -> {
+			if (SimClock.getIntTime() - e.getValue().sequenceNumber >= DEFAULT_TIMEOUT) {
+				keys.add(e.getKey());
 			}
-		}
+		});
+		
+		keys.forEach(key -> routingTable.remove(key));
 	}
 }
